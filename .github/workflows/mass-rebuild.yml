@@ -123,6 +123,6 @@ jobs:
     steps:
       - name: CD trigger
         shell: bash
-        run: curl -i -u paulcarroty:$BUNDLES_TOKEN -X POST -H "Accept:application/vnd.github.v3+json" -d '{"event_type":"build"}' https://api.github.com/repos/clearfraction/bundles/dispatches
+        run: curl -i -u paulcarroty:$BUNDLES_TOKEN -X POST -H "Accept:application/vnd.github.v3+json" -d '{"event_type":"build"}' https://api.github.com/repos/clearfraction/bundles/dispatches; curl -i -u paulcarroty:$BUNDLES_TOKEN -X POST -H "Accept:application/vnd.github.v3+json" -d '{"event_type":"build"}' https://api.github.com/repos/clearfraction/mass-rebuild-v2/dispatches
         env:
           BUNDLES_TOKEN: ${{ secrets.BUNDLES_TOKEN }}
