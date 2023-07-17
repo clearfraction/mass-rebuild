@@ -25,7 +25,7 @@ sed -i '/^export FFLAGS=.*/ s/\ "/ -march=x86-64-v3 -m64-Wl,-z,x86-64-v3\ "/' *.
 sed -i '/^export FCFLAGS=.*/ s/\ "/ -march=x86-64-v3 -m64\ "/' *.spec
 sed -i '/^export LDFLAGS=.*/ s/\ "/ -march=x86-64-v3 -m64\ "/' *.spec
 sed -i '/^export RUSTFLAGS=.*/ s/-C target-cpu=westmere/-C target-cpu=haswell/' *.spec
-sed -i '/^export RUSTFLAGS=.*/ s/-C target-feature=+avx/-C target-feature=+avx,+avx2/' *.spec
+sed -i '/^export RUSTFLAGS=.*/ s/-C target-feature=+avx/-C target-feature=+avx,+avx2,+fma/' *.spec
 
 
 # build the package
