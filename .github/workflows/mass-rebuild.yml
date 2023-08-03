@@ -59,7 +59,7 @@ jobs:
           sed -i '/^export FCFLAGS=.*/ s/\ "/ -march=x86-64-v3 -m64\ "/' build.sh
           sed -i '/^export LDFLAGS=.*/ s/\ "/ -march=x86-64-v3 -m64\ "/' build.sh
           sed -i '/^export RUSTFLAGS=.*/ s/-C target-cpu=westmere/-C target-cpu=haswell/' build.sh
-          sed -i '/^export RUSTFLAGS=.*/ s/-C target-feature=+avx/-C target-feature=+avx2/' build.sh
+          sed -i '/^export RUSTFLAGS=.*/ s/-C target-feature=+avx/-C target-feature=+avx,+avx2,+fma/' build.sh
           ./build.sh
           mv /home/RPMS /tmp/repository
       - name: Upload result
