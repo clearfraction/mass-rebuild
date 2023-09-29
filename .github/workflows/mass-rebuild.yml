@@ -100,7 +100,7 @@ jobs:
       options: --privileged --cap-add=SYS_ADMIN --security-opt apparmor:unconfined
     strategy:
       matrix:
-        pkg: [gomuks, wob, mpv, mpv-cuda, yt-dlp, gstreamer-libav, waybar, wf-recorder, grim, playerctl, brightnessctl, mako, xdg-desktop-portal-wlr, webapp-manager, qt6ct, kvantum, keyd, youtube-tui]
+        pkg: [gomuks, wob, mpv, mpv-cuda, yt-dlp, gstreamer-libav, waybar, wf-recorder, grim, playerctl, brightnessctl, mako, webapp-manager, qt6ct, kvantum, keyd, youtube-tui]
     steps:
       - name: Download result
         uses: actions/download-artifact@v2
