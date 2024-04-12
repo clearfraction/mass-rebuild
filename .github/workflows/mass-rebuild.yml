@@ -75,7 +75,7 @@ jobs:
       options: --privileged --cap-add=SYS_ADMIN --security-opt apparmor:unconfined
     strategy:
       matrix:
-        pkg: [ffmpeg, ffmpeg-cuda, kanshi, wlsunset, rofi-wayland, wl-clipboard, wlr-randr, swayblur, swww, autotiling, swaylock-effects, imv, nvidia-vaapi-driver, vdpau-va-driver-vp9]
+        pkg: [ffmpeg, ffmpeg-cuda, kanshi, wlsunset, wl-clipboard, wlr-randr, swayblur, swww, autotiling, imv, nvidia-vaapi-driver, vdpau-va-driver-vp9]
     steps:
       - name: Download result
         uses: actions/download-artifact@v2
@@ -100,7 +100,7 @@ jobs:
       options: --privileged --cap-add=SYS_ADMIN --security-opt apparmor:unconfined
     strategy:
       matrix:
-        pkg: [gomuks, wob, mpv, mpv-cuda, yt-dlp, gstreamer-libav, waybar, wf-recorder, grim, playerctl, brightnessctl, mako, webapp-manager, qt6ct, kvantum, keyd, youtube-tui, cloak]
+        pkg: [wob, mpv, mpv-cuda, yt-dlp, gstreamer-libav, wf-recorder, grim, playerctl, brightnessctl, mako, webapp-manager, qt6ct, kvantum, keyd, youtube-tui, cloak]
     steps:
       - name: Download result
         uses: actions/download-artifact@v2
