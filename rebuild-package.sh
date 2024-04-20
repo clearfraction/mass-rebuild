@@ -6,7 +6,7 @@ unset https_proxy
 
 # install rpm devtools
 cd /home
-swupd update --quiet 
+swupd update --quiet -W20 --retry-delay=1
 swupd bundle-add curl dnf git --quiet 
 git clone https://github.com/clearfraction/"$1".git && mv "$1"/* .
 # manage dependencies
