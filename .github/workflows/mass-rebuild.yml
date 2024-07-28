@@ -25,7 +25,7 @@ jobs:
         with:
           path: /tmp/repository/*.rpm
 
-  lapce:
+  zed:
     runs-on: ubuntu-latest
     container: 
       image: clearlinux:latest
@@ -36,7 +36,7 @@ jobs:
         run: |
           swupd bundle-add curl --quiet
           curl -LO https://raw.githubusercontent.com/clearfraction/mass-rebuild/main/rebuild-package.sh && chmod +x ./rebuild-package.sh
-          ./rebuild-package.sh lapce
+          ./rebuild-package.sh zed
       - name: Upload result
         uses: actions/upload-artifact@v2
         with:
@@ -100,7 +100,7 @@ jobs:
       options: --privileged --cap-add=SYS_ADMIN --security-opt apparmor:unconfined
     strategy:
       matrix:
-        pkg: [wob, mpv, mpv-cuda, yt-dlp, gstreamer-libav, wf-recorder, grim, playerctl, brightnessctl, mako, webapp-manager, qt6ct, kvantum, keyd, youtube-tui, cloak, gbinder-python, waydroid]
+        pkg: [wob, mpv, mpv-cuda, yt-dlp, gstreamer-libav, wf-recorder, grim, playerctl, brightnessctl, mako, webapp-manager, qt6ct, kvantum, keyd, youtube-tui, cloak, gbinder-python, waydroid, yazi, xdg-desktop-portal-termfilechooser]
     steps:
       - name: Download result
         uses: actions/download-artifact@v2
@@ -118,7 +118,7 @@ jobs:
           path: /tmp/repository/*.rpm
 
   finish:
-    needs: [lap_3, vscodium, lapce]
+    needs: [lap_3, vscodium, zed]
     runs-on: ubuntu-latest
     steps:
       - name: CD trigger
