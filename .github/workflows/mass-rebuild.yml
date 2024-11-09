@@ -21,7 +21,7 @@ jobs:
           curl -LO https://raw.githubusercontent.com/clearfraction/mass-rebuild/main/rebuild-package.sh && chmod +x ./rebuild-package.sh
           ./rebuild-package.sh ${{ matrix.pkg }}
       - name: Upload result
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@master
         with:
           path: /tmp/repository/*.rpm
 
@@ -38,7 +38,7 @@ jobs:
           curl -LO https://raw.githubusercontent.com/clearfraction/mass-rebuild/main/rebuild-package.sh && chmod +x ./rebuild-package.sh
           ./rebuild-package.sh zed
       - name: Upload result
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@master
         with:
           path: /tmp/repository/*.rpm
 
@@ -63,7 +63,7 @@ jobs:
           ./build.sh
           mv /home/RPMS /tmp/repository
       - name: Upload result
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@master
         with:
           path: /tmp/repository/*.rpm
 
@@ -78,7 +78,7 @@ jobs:
         pkg: [ffmpeg, ffmpeg-cuda, kanshi, wlsunset, wl-clipboard, wlr-randr, swayblur, swww, autotiling, imv, nvidia-vaapi-driver, vdpau-va-driver-vp9]
     steps:
       - name: Download result
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@master
         with:
           path: /tmp/repository
       - name: Building a package
@@ -103,7 +103,7 @@ jobs:
         pkg: [wob, mpv, mpv-cuda, yt-dlp, gstreamer-libav, wf-recorder, grim, playerctl, brightnessctl, mako, webapp-manager, qt6ct, kvantum, keyd, youtube-tui, cloak, yazi, xdg-desktop-portal-termfilechooser, zellij]
     steps:
       - name: Download result
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@master
         with:
           path: /tmp/repository
       - name: Building a package
@@ -113,7 +113,7 @@ jobs:
           curl -LO https://raw.githubusercontent.com/clearfraction/mass-rebuild/main/rebuild-package.sh && chmod +x ./rebuild-package.sh
           ./rebuild-package.sh ${{ matrix.pkg }}
       - name: Upload result
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@master
         with:
           path: /tmp/repository/*.rpm
 
