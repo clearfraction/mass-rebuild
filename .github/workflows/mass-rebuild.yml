@@ -21,7 +21,7 @@ jobs:
           curl -LO https://raw.githubusercontent.com/clearfraction/mass-rebuild/main/rebuild-package.sh && chmod +x ./rebuild-package.sh
           ./rebuild-package.sh ${{ matrix.pkg }}
       - name: Upload result
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: /tmp/repository/*.rpm
 
@@ -38,7 +38,7 @@ jobs:
           curl -LO https://raw.githubusercontent.com/clearfraction/mass-rebuild/main/rebuild-package.sh && chmod +x ./rebuild-package.sh
           ./rebuild-package.sh zed
       - name: Upload result
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: /tmp/repository/*.rpm
 
@@ -63,7 +63,7 @@ jobs:
           ./build.sh
           mv /home/RPMS /tmp/repository
       - name: Upload result
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: /tmp/repository/*.rpm
 
@@ -88,7 +88,7 @@ jobs:
           curl -LO https://raw.githubusercontent.com/clearfraction/mass-rebuild/main/rebuild-package.sh && chmod +x ./rebuild-package.sh
           ./rebuild-package.sh ${{ matrix.pkg }}
       - name: Upload result
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: /tmp/repository/*.rpm
 
@@ -113,7 +113,7 @@ jobs:
           curl -LO https://raw.githubusercontent.com/clearfraction/mass-rebuild/main/rebuild-package.sh && chmod +x ./rebuild-package.sh
           ./rebuild-package.sh ${{ matrix.pkg }}
       - name: Upload result
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: /tmp/repository/*.rpm
 
