@@ -23,8 +23,11 @@ jobs:
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.pkg }}
+          name: artifact-${{ matrix.pkg }}
           path: /tmp/repository/*.rpm
+          overwrite: true
+      - name: Merge Artifacts
+        uses: actions/upload-artifact/merge@v4          
 
   zed:
     runs-on: ubuntu-latest
@@ -41,8 +44,11 @@ jobs:
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
-          name: zed
+          name: artifact-zed
           path: /tmp/repository/*.rpm
+          overwrite: true
+      - name: Merge Artifacts
+        uses: actions/upload-artifact/merge@v4          
 
   vscodium:
     runs-on: ubuntu-latest
@@ -67,8 +73,11 @@ jobs:
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
-          name: vscodium
+          name: artifact-vscodium
           path: /tmp/repository/*.rpm
+          overwrite: true
+      - name: Merge Artifacts
+        uses: actions/upload-artifact/merge@v4          
 
   lap_2:
     needs: lap_1
@@ -84,6 +93,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: /tmp/repository
+          pattern: artifact-*
+          merge-multiple: true
+      - run: ls -R /tmp/repository          
       - name: Building a package
         shell: bash
         run: |
@@ -93,8 +105,11 @@ jobs:
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.pkg }}
+          name: artifact-${{ matrix.pkg }}
           path: /tmp/repository/*.rpm
+          overwrite: true
+      - name: Merge Artifacts
+        uses: actions/upload-artifact/merge@v4          
 
   lap_3:
     needs: lap_2
@@ -110,6 +125,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: /tmp/repository
+          pattern: artifact-*
+          merge-multiple: true
+      - run: ls -R /tmp/repository           
       - name: Building a package
         shell: bash
         run: |
@@ -119,8 +137,11 @@ jobs:
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.pkg }}
+          name: artifact-${{ matrix.pkg }}
           path: /tmp/repository/*.rpm
+          overwrite: true
+      - name: Merge Artifacts
+        uses: actions/upload-artifact/merge@v4          
 
   finish:
     needs: [lap_3, vscodium, zed]
