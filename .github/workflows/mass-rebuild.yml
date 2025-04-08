@@ -81,7 +81,7 @@ jobs:
         pkg: [ffmpeg, ffmpeg-cuda, kanshi, wlsunset, wl-clipboard, wlr-randr, swayblur, swww, autotiling, imv, nvidia-vaapi-driver, vdpau-va-driver-vp9, rio, sniffnet]
     steps:
       - name: Download result
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           path: /tmp/repository
       - name: Building a package
@@ -107,7 +107,7 @@ jobs:
         pkg: [wob, mpv, mpv-cuda, yt-dlp, gstreamer-libav, wf-recorder, grim, playerctl, brightnessctl, mako, webapp-manager, qt6ct, kvantum, keyd, youtube-tui, cloak, yazi, xdg-desktop-portal-termfilechooser, zellij]
     steps:
       - name: Download result
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           path: /tmp/repository
       - name: Building a package
