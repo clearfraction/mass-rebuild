@@ -23,7 +23,7 @@ jobs:
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
-          name: lap_1
+          name: ${{ matrix.pkg }}
           path: /tmp/repository/*.rpm
 
   zed:
@@ -93,7 +93,7 @@ jobs:
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
-          name: lap_2
+          name: ${{ matrix.pkg }}
           path: /tmp/repository/*.rpm
 
   lap_3:
@@ -119,7 +119,7 @@ jobs:
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
-          name: lap_3
+          name: ${{ matrix.pkg }}
           path: /tmp/repository/*.rpm
 
   finish:
