@@ -105,8 +105,7 @@ jobs:
           name: artifact-${{ matrix.pkg }}
           path: /tmp/repository/*.rpm
           overwrite: true
-      - name: Merge Artifacts
-        uses: actions/upload-artifact/merge@v4          
+        
 
   lap_3:
     needs: lap_2
@@ -137,8 +136,7 @@ jobs:
           name: artifact-${{ matrix.pkg }}
           path: /tmp/repository/*.rpm
           overwrite: true
-      - name: Merge Artifacts
-        uses: actions/upload-artifact/merge@v4          
+      
 
   finish:
     needs: [lap_3, vscodium, zed]
