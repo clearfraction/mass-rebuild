@@ -26,8 +26,7 @@ jobs:
           name: artifact-${{ matrix.pkg }}
           path: /tmp/repository/*.rpm
           overwrite: true
-      - name: Merge Artifacts
-        uses: actions/upload-artifact/merge@v4          
+        
 
   zed:
     runs-on: ubuntu-latest
@@ -47,8 +46,7 @@ jobs:
           name: artifact-zed
           path: /tmp/repository/*.rpm
           overwrite: true
-      - name: Merge Artifacts
-        uses: actions/upload-artifact/merge@v4          
+         
 
   vscodium:
     runs-on: ubuntu-latest
@@ -76,8 +74,7 @@ jobs:
           name: artifact-vscodium
           path: /tmp/repository/*.rpm
           overwrite: true
-      - name: Merge Artifacts
-        uses: actions/upload-artifact/merge@v4          
+        
 
   lap_2:
     needs: lap_1
