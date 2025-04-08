@@ -23,6 +23,7 @@ jobs:
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
+          name: lap_1
           path: /tmp/repository/*.rpm
 
   zed:
@@ -40,6 +41,7 @@ jobs:
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
+          name: zed
           path: /tmp/repository/*.rpm
 
   vscodium:
@@ -65,6 +67,7 @@ jobs:
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
+          name: vscodium
           path: /tmp/repository/*.rpm
 
   lap_2:
@@ -90,6 +93,7 @@ jobs:
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
+          name: lap_2
           path: /tmp/repository/*.rpm
 
   lap_3:
@@ -115,6 +119,7 @@ jobs:
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
+          name: lap_3
           path: /tmp/repository/*.rpm
 
   finish:
